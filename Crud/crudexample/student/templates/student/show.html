@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Details</title>
+</head>
+<body>
+<center>
+<h2><font color="blue">Student Details</font></h2>
+<form name="frm2" action="" method="post">
+    {% csrf_token %}
+        <table border="1">
+            <tr>
+                <th>Roll No</th>
+                <th>Student Name</th>
+                <th>Address</th>
+                <th>Class</th>
+            </tr>
+            {% for s in student %}
+                <tr class="info">
+                    <td>{{ s.Rollno }}</td>
+                    <td>{{ s.Stud_Name }}</td>
+                    <td>{{ s.Address }}</td>
+                    <td>{{ s.stud_class }}</td>
+
+                </tr>
+            {% endfor %}
+        </table>
+
+</form>
+</center>
+</body>
+</html>
